@@ -1,0 +1,438 @@
+/**
+	Conveniently output the Entypo icon set and the Entypo social icon set
+	www.entypo.com
+	
+	Author Joss Mackison
+	www.jossmackison.me
+**/
+
+
+// Set variables
+
+@icon-font-path:     '../fonts/';
+@icon-prefix:        entypo;
+@icon-social-prefix: entypo-social;
+
+
+// Set mixin
+// use if you can't or don't want to apply the "@icon-prefix" class to your element
+
+.entypo-icon(@color, @content, @size) {
+	color: @color;
+	font-size: @size;
+
+	&:before { content: @content; }
+
+	display: inline-block;
+	font-family: 'EntypoRegular';
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: .5em;
+	speak: none;
+	text-decoration: inherit;
+	text-transform: none;
+	vertical-align: -0.1em;
+	-webkit-font-smoothing: antialiased;
+}
+
+#test {
+	.entypo-icon(red, "\2665", 100px);
+}
+
+
+// Include fonts
+ 
+@font-face {
+	font-family: 'EntypoRegular';
+	src: url('@{icon-font-path}entypo.eot');
+	src: url('@{icon-font-path}entypo.eot?#iefix') format('embedded-opentype'),
+		 url('@{icon-font-path}entypo.woff') format('woff'),
+		 url('@{icon-font-path}entypo.ttf') format('truetype'),
+		 url('@{icon-font-path}entypo.svg#EntypoRegular') format('svg');
+}
+ 
+@font-face {
+	font-family: 'EntypoSocial';
+	src: url('@{icon-font-path}entypo-social.eot');
+	src: url('@{icon-font-path}entypo-social.eot?#iefix') format('embedded-opentype'),
+		 url('@{icon-font-path}entypo-social.woff') format('woff'),
+		 url('@{icon-font-path}entypo-social.ttf') format('truetype'),
+		 url('@{icon-font-path}entypo-social.svg#EntypoRegular') format('svg');
+}
+
+
+// Regular catchall
+
+.@{icon-prefix} {
+	
+	// positioning
+	display: inline-block;
+	vertical-align: -0.1em;
+	
+	// reset possible inherited font styles
+	font-family: 'EntypoRegular';
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-decoration: inherit;
+	text-transform: none;
+	
+	// silence screen readers
+	speak: none;
+	
+	// smooth iOS font
+	-webkit-font-smoothing: antialiased;
+	
+	/* entypo is abnormally small */
+	font-size: 2.5em;
+	
+	/* offset font-size */
+	line-height: .5em;
+	
+	// because of the altered font-size/line-height underline looks weird
+	text-decoration: none;
+}
+
+
+// Social catchall
+
+.@{icon-social-prefix} {
+	.entypo();
+	font-family: 'EntypoSocial';
+}
+
+
+// Mixin
+// Use if you don't want to apply the "@icon-prefix" class to your existing element
+
+.@{icon-prefix}-icon(@color, @content, @size) {
+	.@{icon-prefix}();
+	color: @color;
+	content: @content;
+	font-size: @size;
+}
+
+
+// Entypo icons are irregular widths. For use in a vertical line apply this class
+
+.@{icon-prefix}-fixed-width {
+	text-align: center;
+	width: .7em;
+}
+
+
+// Give the icon some breathing room in buttons
+
+.@{icon-prefix}-btn-align {
+	margin-left: -0.075em;
+	margin-right: 0.200em;
+}
+
+
+
+
+// ICONS - Regular
+// ------------------------------
+
+.@{icon-prefix}-phone:before                   { content: "\1F4DE"; }
+.@{icon-prefix}-mobile:before                  { content: "\1F4F1"; }
+.@{icon-prefix}-mouse:before                   { content: "\E789"; }
+.@{icon-prefix}-address:before                 { content: "\E723"; }
+.@{icon-prefix}-mail:before                    { content: "\2709"; }
+.@{icon-prefix}-paper-plane:before             { content: "\1F53F"; }
+.@{icon-prefix}-pencil:before                  { content: "\270E"; }
+.@{icon-prefix}-feather:before                 { content: "\2712"; }
+.@{icon-prefix}-attach:before                  { content: "\1F4CE"; }
+.@{icon-prefix}-inbox:before                   { content: "\E777"; }
+.@{icon-prefix}-reply:before                   { content: "\E712"; }
+.@{icon-prefix}-reply-all:before               { content: "\E713"; }
+.@{icon-prefix}-forward:before                 { content: "\27A6"; }
+.@{icon-prefix}-user:before                    { content: "\1F464"; }
+.@{icon-prefix}-users:before                   { content: "\1F465"; }
+.@{icon-prefix}-add-user:before                { content: "\E700"; }
+.@{icon-prefix}-vcard:before                   { content: "\E722"; }
+.@{icon-prefix}-export:before                  { content: "\E715"; }
+.@{icon-prefix}-location:before                { content: "\E724"; }
+.@{icon-prefix}-map:before                     { content: "\E727"; }
+.@{icon-prefix}-compass:before                 { content: "\E728"; }
+.@{icon-prefix}-direction:before               { content: "\27A2"; }
+.@{icon-prefix}-hair-cross:before              { content: "\1F3AF"; }
+.@{icon-prefix}-share:before                   { content: "\E73C"; }
+.@{icon-prefix}-shareable:before               { content: "\E73E"; }
+.@{icon-prefix}-heart:before                   { content: "\2665"; }
+.@{icon-prefix}-heart-empty:before             { content: "\2661"; }
+.@{icon-prefix}-star:before                    { content: "\2605"; }
+.@{icon-prefix}-star-empty:before              { content: "\2606"; }
+.@{icon-prefix}-thumbs-up:before               { content: "\1F44D"; }
+.@{icon-prefix}-thumbs-down:before             { content: "\1F44E"; }
+.@{icon-prefix}-chat:before                    { content: "\E720"; }
+.@{icon-prefix}-comment:before                 { content: "\E718"; }
+.@{icon-prefix}-quote:before                   { content: "\275E"; }
+.@{icon-prefix}-home:before                    { content: "\2302"; }
+.@{icon-prefix}-popup:before                   { content: "\E74C"; }
+.@{icon-prefix}-search:before                  { content: "\1F50D"; }
+.@{icon-prefix}-flashlight:before              { content: "\1F526"; }
+.@{icon-prefix}-print:before                   { content: "\E716"; }
+.@{icon-prefix}-bell:before                    { content: "\1F514"; }
+.@{icon-prefix}-link:before                    { content: "\1F517"; }
+.@{icon-prefix}-flag:before                    { content: "\2691"; }
+.@{icon-prefix}-cog:before                     { content: "\2699"; }
+.@{icon-prefix}-tools:before                   { content: "\2692"; }
+.@{icon-prefix}-trophy:before                  { content: "\1F3C6"; }
+.@{icon-prefix}-tag:before                     { content: "\E70C"; }
+.@{icon-prefix}-camera:before                  { content: "\1F4F7"; }
+.@{icon-prefix}-megaphone:before               { content: "\1F4E3"; }
+.@{icon-prefix}-moon:before                    { content: "\263D"; }
+.@{icon-prefix}-palette:before                 { content: "\1F3A8"; }
+.@{icon-prefix}-leaf:before                    { content: "\1F342"; }
+.@{icon-prefix}-note:before                    { content: "\266A"; }
+.@{icon-prefix}-beamed-note:before             { content: "\266B"; }
+.@{icon-prefix}-new:before                     { content: "\1F4A5"; }
+.@{icon-prefix}-graduation-cap:before          { content: "\1F393"; }
+.@{icon-prefix}-book:before                    { content: "\1F4D5"; }
+.@{icon-prefix}-newspaper:before               { content: "\1F4F0"; }
+.@{icon-prefix}-bag:before                     { content: "\1F45C"; }
+.@{icon-prefix}-airplane:before                { content: "\2708"; }
+.@{icon-prefix}-lifebuoy:before                { content: "\E788"; }
+.@{icon-prefix}-eye:before                     { content: "\E70A"; }
+.@{icon-prefix}-clock:before                   { content: "\1F554"; }
+.@{icon-prefix}-mic:before                     { content: "\1F3A4"; }
+.@{icon-prefix}-calendar:before                { content: "\1F4C5"; }
+.@{icon-prefix}-flash:before                   { content: "\26A1"; }
+.@{icon-prefix}-thunder-cloud:before           { content: "\26C8"; }
+.@{icon-prefix}-droplet:before                 { content: "\1F4A7"; }
+.@{icon-prefix}-cd:before                      { content: "\1F4BF"; }
+.@{icon-prefix}-briefcase:before               { content: "\1F4BC"; }
+.@{icon-prefix}-air:before                     { content: "\1F4A8"; }
+.@{icon-prefix}-hourglass:before               { content: "\23F3"; }
+.@{icon-prefix}-gauge:before                   { content: "\1F6C7"; }
+.@{icon-prefix}-language:before                { content: "\1F394"; }
+.@{icon-prefix}-network:before                 { content: "\E776"; }
+.@{icon-prefix}-key:before                     { content: "\1F511"; }
+.@{icon-prefix}-battery:before                 { content: "\1F50B"; }
+.@{icon-prefix}-bucket:before                  { content: "\1F4FE"; }
+.@{icon-prefix}-magnet:before                  { content: "\E7A1"; }
+.@{icon-prefix}-drive:before                   { content: "\1F4FD"; }
+.@{icon-prefix}-cup:before                     { content: "\2615"; }
+.@{icon-prefix}-rocket:before                  { content: "\1F680"; }
+.@{icon-prefix}-brush:before                   { content: "\E79A"; }
+.@{icon-prefix}-suitcase:before                { content: "\1F6C6"; }
+.@{icon-prefix}-traffic-cone:before            { content: "\1F6C8"; }
+.@{icon-prefix}-globe:before                   { content: "\1F30E"; }
+.@{icon-prefix}-keyboard:before                { content: "\2328"; }
+.@{icon-prefix}-browser:before                 { content: "\E74E"; }
+.@{icon-prefix}-publish:before                 { content: "\E74D"; }
+.@{icon-prefix}-progress-3:before              { content: "\E76B"; }
+.@{icon-prefix}-progress-2:before              { content: "\E76A"; }
+.@{icon-prefix}-progress-1:before              { content: "\E769"; }
+.@{icon-prefix}-progress-0:before              { content: "\E768"; }
+.@{icon-prefix}-light-down:before              { content: "\1F505"; }
+.@{icon-prefix}-light-up:before                { content: "\1F506"; }
+.@{icon-prefix}-adjust:before                  { content: "\25D1"; }
+.@{icon-prefix}-code:before                    { content: "\E714"; }
+.@{icon-prefix}-monitor:before                 { content: "\1F4BB"; }
+.@{icon-prefix}-infinity:before                { content: "\221E"; }
+.@{icon-prefix}-light-bulb:before              { content: "\1F4A1"; }
+.@{icon-prefix}-credit-card:before             { content: "\1F4B3"; }
+.@{icon-prefix}-database:before                { content: "\1F4F8"; }
+.@{icon-prefix}-voicemail:before               { content: "\2707"; }
+.@{icon-prefix}-clipboard:before               { content: "\1F4CB"; }
+.@{icon-prefix}-cart:before                    { content: "\E73D"; }
+.@{icon-prefix}-box:before                     { content: "\1F4E6"; }
+.@{icon-prefix}-ticket:before                  { content: "\1F3AB"; }
+.@{icon-prefix}-rss:before                     { content: "\E73A"; }
+.@{icon-prefix}-signal:before                  { content: "\1F4F6"; }
+.@{icon-prefix}-thermometer:before             { content: "\1F4FF"; }
+.@{icon-prefix}-water:before                   { content: "\1F4A6"; }
+.@{icon-prefix}-sweden:before                  { content: "\F601"; }
+.@{icon-prefix}-line-graph:before              { content: "\1F4C8"; }
+.@{icon-prefix}-pie-chart:before               { content: "\25F4"; }
+.@{icon-prefix}-bar-graph:before               { content: "\1F4CA"; }
+.@{icon-prefix}-area-graph:before              { content: "\1F53E"; }
+.@{icon-prefix}-lock:before                    { content: "\1F512"; }
+.@{icon-prefix}-lock-open:before               { content: "\1F513"; }
+.@{icon-prefix}-logout:before                  { content: "\E741"; }
+.@{icon-prefix}-login:before                   { content: "\E740"; }
+.@{icon-prefix}-check:before                   { content: "\2713"; }
+.@{icon-prefix}-cross:before                   { content: "\274C"; }
+.@{icon-prefix}-squared-minus:before           { content: "\229F"; }
+.@{icon-prefix}-squared-plus:before            { content: "\229E"; }
+.@{icon-prefix}-squared-cross:before           { content: "\274E"; }
+.@{icon-prefix}-circled-minus:before           { content: "\2296"; }
+.@{icon-prefix}-circled-plus:before            { content: "\2295"; }
+.@{icon-prefix}-circled-cross:before           { content: "\2716"; }
+.@{icon-prefix}-minus:before                   { content: "\2796"; }
+.@{icon-prefix}-plus:before                    { content: "\2795"; }
+.@{icon-prefix}-erase:before                   { content: "\232B"; }
+.@{icon-prefix}-block:before                   { content: "\1F6AB"; }
+.@{icon-prefix}-info:before                    { content: "\2139"; }
+.@{icon-prefix}-circled-info:before            { content: "\E705"; }
+.@{icon-prefix}-help:before                    { content: "\2753"; }
+.@{icon-prefix}-circled-help:before            { content: "\E704"; }
+.@{icon-prefix}-warning:before                 { content: "\26A0"; }
+.@{icon-prefix}-cycle:before                   { content: "\1F504"; }
+.@{icon-prefix}-cw:before                      { content: "\27F3"; }
+.@{icon-prefix}-ccw:before                     { content: "\27F2"; }
+.@{icon-prefix}-shuffle:before                 { content: "\1F500"; }
+.@{icon-prefix}-back:before                    { content: "\1F519"; }
+.@{icon-prefix}-level-down:before              { content: "\21B3"; }
+.@{icon-prefix}-retweet:before                 { content: "\E717"; }
+.@{icon-prefix}-loop:before                    { content: "\1F501"; }
+.@{icon-prefix}-back-in-time:before            { content: "\E771"; }
+.@{icon-prefix}-level-up:before                { content: "\21B0"; }
+.@{icon-prefix}-switch:before                  { content: "\21C6"; }
+.@{icon-prefix}-numbered-list:before           { content: "\E005"; }
+.@{icon-prefix}-add-to-list:before             { content: "\E003"; }
+.@{icon-prefix}-layout:before                  { content: "\268F"; }
+.@{icon-prefix}-list:before                    { content: "\2630"; }
+.@{icon-prefix}-text-doc:before                { content: "\1F4C4"; }
+.@{icon-prefix}-text-doc-inverted:before       { content: "\E731"; }
+.@{icon-prefix}-doc:before                     { content: "\E730"; }
+.@{icon-prefix}-docs:before                    { content: "\E736"; }
+.@{icon-prefix}-landscape-doc:before           { content: "\E737"; }
+.@{icon-prefix}-picture:before                 { content: "\1F304"; }
+.@{icon-prefix}-video:before                   { content: "\1F3AC"; }
+.@{icon-prefix}-music:before                   { content: "\1F3B5"; }
+.@{icon-prefix}-folder:before                  { content: "\1F4C1"; }
+.@{icon-prefix}-archive:before                 { content: "\E800"; }
+.@{icon-prefix}-trash:before                   { content: "\E729"; }
+.@{icon-prefix}-upload:before                  { content: "\1F4E4"; }
+.@{icon-prefix}-download:before                { content: "\1F4E5"; }
+.@{icon-prefix}-save:before                    { content: "\1F4BE"; }
+.@{icon-prefix}-install:before                 { content: "\E778"; }
+.@{icon-prefix}-cloud:before                   { content: "\2601"; }
+.@{icon-prefix}-upload-cloud:before            { content: "\E711"; }
+.@{icon-prefix}-bookmark:before                { content: "\1F516"; }
+.@{icon-prefix}-bookmarks:before               { content: "\1F4D1"; }
+.@{icon-prefix}-open-book:before               { content: "\1F4D6"; }
+
+.@{icon-prefix}-play:before                    { content: "\25B6"; }
+.@{icon-prefix}-paus:before                    { content: "\2016"; }
+.@{icon-prefix}-record:before                  { content: "\25CF"; }
+.@{icon-prefix}-stop:before                    { content: "\25A0"; }
+.@{icon-prefix}-ff:before                      { content: "\23E9"; }
+.@{icon-prefix}-fb:before                      { content: "\23EA"; }
+.@{icon-prefix}-to-start:before                { content: "\23EE"; }
+.@{icon-prefix}-to-end:before                  { content: "\23ED"; }
+.@{icon-prefix}-resize-full:before             { content: "\E744"; }
+.@{icon-prefix}-resize-small:before            { content: "\E746"; }
+.@{icon-prefix}-volume:before                  { content: "\23F7"; }
+.@{icon-prefix}-sound:before                   { content: "\1F50A"; }
+.@{icon-prefix}-mute:before                    { content: "\1F507"; }
+
+.@{icon-prefix}-flow-cascade:before            { content: "\1F568"; }
+.@{icon-prefix}-flow-branch:before             { content: "\1F569"; }
+.@{icon-prefix}-flow-tree:before               { content: "\1F56A"; }
+.@{icon-prefix}-flow-line:before               { content: "\1F56B"; }
+.@{icon-prefix}-flow-parallel:before           { content: "\1F56C"; }
+
+.@{icon-prefix}-left-bold:before               { content: "\E4AD"; }
+.@{icon-prefix}-down-bold:before               { content: "\E4B0"; }
+.@{icon-prefix}-up-bold:before                 { content: "\E4AF"; }
+.@{icon-prefix}-right-bold:before              { content: "\E4AE"; }
+.@{icon-prefix}-left:before                    { content: "\2B05"; }
+.@{icon-prefix}-down:before                    { content: "\2B07"; }
+.@{icon-prefix}-up:before                      { content: "\2B06"; }
+.@{icon-prefix}-right:before                   { content: "\27A1"; }
+
+.@{icon-prefix}-circled-left:before            { content: "\E759"; }
+.@{icon-prefix}-circled-down:before            { content: "\E758"; }
+.@{icon-prefix}-circled-up:before              { content: "\E75B"; }
+.@{icon-prefix}-circled-right:before           { content: "\E75A"; }
+
+.@{icon-prefix}-triangle-left:before           { content: "\25C2"; }
+.@{icon-prefix}-triangle-down:before           { content: "\25BE"; }
+.@{icon-prefix}-triangle-up:before             { content: "\25B4"; }
+.@{icon-prefix}-triangle-right:before          { content: "\25B8"; }
+
+.@{icon-prefix}-chevron-left:before            { content: "\E75D"; }
+.@{icon-prefix}-chevron-down:before            { content: "\E75C"; }
+.@{icon-prefix}-chevron-up:before              { content: "\E75F"; }
+.@{icon-prefix}-chevron-right:before           { content: "\E75E"; }
+.@{icon-prefix}-chevron-small-left:before      { content: "\E761"; }
+.@{icon-prefix}-chevron-small-down:before      { content: "\E760"; }
+.@{icon-prefix}-chevron-small-up:before        { content: "\E763"; }
+.@{icon-prefix}-chevron-small-right:before     { content: "\E762"; }
+.@{icon-prefix}-chevron-thin-left:before       { content: "\E765"; }
+.@{icon-prefix}-chevron-thin-down:before       { content: "\E764"; }
+.@{icon-prefix}-chevron-thin-up:before         { content: "\E767"; }
+.@{icon-prefix}-chevron-thin-right:before      { content: "\E766"; }
+
+.@{icon-prefix}-left-thin:before               { content: "\2190"; }
+.@{icon-prefix}-down-thin:before               { content: "\2193"; }
+.@{icon-prefix}-up-thin:before                 { content: "\2191"; }
+.@{icon-prefix}-right-thin:before              { content: "\2192"; }
+
+.@{icon-prefix}-arrow-combo:before             { content: "\E74F"; }
+
+.@{icon-prefix}-three-dots:before              { content: "\23F6"; }
+.@{icon-prefix}-two-dots:before                { content: "\23F5"; }
+.@{icon-prefix}-dot:before                     { content: "\23F4"; }
+
+.@{icon-prefix}-cc:before                      { content: "\1F545"; }
+.@{icon-prefix}-cc-by:before                   { content: "\1F546"; }
+.@{icon-prefix}-cc-nc:before                   { content: "\1F547"; }
+.@{icon-prefix}-cc-nc-eu:before                { content: "\1F548"; }
+.@{icon-prefix}-cc-nc-jp:before                { content: "\1F549"; }
+.@{icon-prefix}-cc-sa:before                   { content: "\1F54A"; }
+.@{icon-prefix}-cc-nd:before                   { content: "\1F54B"; }
+.@{icon-prefix}-cc-pd:before                   { content: "\1F54C"; }
+.@{icon-prefix}-cc-zero:before                 { content: "\1F54D"; }
+.@{icon-prefix}-cc-share:before                { content: "\1F54E"; }
+.@{icon-prefix}-cc-remix:before                { content: "\1F54F"; }
+.@{icon-prefix}-db-logo:before                 { content: "\1F5F9"; }
+.@{icon-prefix}-db-shape:before                { content: "\1F5FA"; }
+
+
+
+
+// Icons social
+// ------------------------------
+
+.@{icon-social-prefix}-github:before           { content: "\F300" }
+.@{icon-social-prefix}-c-github:before         { content: "\F301" }
+.@{icon-social-prefix}-flickr:before           { content: "\F303" }
+.@{icon-social-prefix}-c-flickr:before         { content: "\F304" }
+.@{icon-social-prefix}-vimeo:before            { content: "\F306" }
+.@{icon-social-prefix}-c-vimeo:before          { content: "\F307" }
+.@{icon-social-prefix}-twitter:before          { content: "\F309" }
+.@{icon-social-prefix}-c-twitter:before        { content: "\F30A" }
+.@{icon-social-prefix}-facebook:before         { content: "\F30C" }
+.@{icon-social-prefix}-c-facebook:before       { content: "\F30D" }
+.@{icon-social-prefix}-s-facebook:before       { content: "\F30E" }
+.@{icon-social-prefix}-google+:before          { content: "\F30F" }
+.@{icon-social-prefix}-c-google+:before        { content: "\F310" }
+.@{icon-social-prefix}-pinterest:before        { content: "\F312" }
+.@{icon-social-prefix}-c-pinterest:before      { content: "\F313" }
+.@{icon-social-prefix}-tumblr:before           { content: "\F315" }
+.@{icon-social-prefix}-c-tumblr:before         { content: "\F316" }
+.@{icon-social-prefix}-linkedin:before         { content: "\F318" }
+.@{icon-social-prefix}-c-linkedin:before       { content: "\F319" }
+.@{icon-social-prefix}-dribbble:before         { content: "\F31B" }
+.@{icon-social-prefix}-c-dribbble:before       { content: "\F31C" }
+.@{icon-social-prefix}-stumbleupon:before      { content: "\F31E" }
+.@{icon-social-prefix}-c-stumbleupon:before    { content: "\F31F" }
+.@{icon-social-prefix}-lastfm:before           { content: "\F321" }
+.@{icon-social-prefix}-c-lastfm:before         { content: "\F322" }
+.@{icon-social-prefix}-rdio:before             { content: "\F324" }
+.@{icon-social-prefix}-c-rdio:before           { content: "\F325" }
+.@{icon-social-prefix}-spotify:before          { content: "\F327" }
+.@{icon-social-prefix}-c-spotify:before        { content: "\F328" }
+.@{icon-social-prefix}-qq:before               { content: "\F32A" }
+.@{icon-social-prefix}-instagram:before        { content: "\F32D" }
+.@{icon-social-prefix}-dropbox:before          { content: "\F330" }
+.@{icon-social-prefix}-evernote:before         { content: "\F333" }
+.@{icon-social-prefix}-flattr:before           { content: "\F336" }
+.@{icon-social-prefix}-skype:before            { content: "\F339" }
+.@{icon-social-prefix}-c-skype:before          { content: "\F33A" }
+.@{icon-social-prefix}-renren:before           { content: "\F33C" }
+.@{icon-social-prefix}-sina-weibo:before       { content: "\F33F" }
+.@{icon-social-prefix}-paypal:before           { content: "\F342" }
+.@{icon-social-prefix}-picasa:before           { content: "\F345" }
+.@{icon-social-prefix}-soundcloud:before       { content: "\F348" }
+.@{icon-social-prefix}-mixi:before             { content: "\F34B" }
+.@{icon-social-prefix}-behance:before          { content: "\F34E" }
+.@{icon-social-prefix}-google-circles:before   { content: "\F351" }
+.@{icon-social-prefix}-vk:before               { content: "\F354" }
+.@{icon-social-prefix}-smashing:before         { content: "\F357" }
