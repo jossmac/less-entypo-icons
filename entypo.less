@@ -99,18 +99,8 @@
 }
 
 
-// Mixin
-// Use if you don't want to apply the "@icon-prefix" class to your existing element
-
-.@{icon-prefix}-icon(@color, @content, @size) {
-	.@{icon-prefix}();
-	color: @color;
-	content: @content;
-	font-size: @size;
-}
-
-
-// Entypo icons are irregular widths. For use in a vertical line apply this class
+// Entypo icons are irregular widths so can use this class to
+// horizontally-align a list
 
 .@{icon-prefix}-fixed-width {
 	text-align: center;
