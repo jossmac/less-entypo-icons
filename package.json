@@ -1,0 +1,10 @@
+{
+  "name": "less-entypo-icons",
+  "version": "0.0.1",
+  "description": "LESS file for including entypo icons",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jossmac/less-entypo-icons.git"
+  },
+  "author": "jossmac"
+}
